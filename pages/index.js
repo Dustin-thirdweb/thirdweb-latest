@@ -62,8 +62,9 @@ const PackageVersionsComponent = () => {
           ))}
         </ul>
         <button className={styles.button} onClick={fetchLatestVersions} disabled={isLoading}>
-          Get Latest
+          {isLoading ? 'Loading...' : 'Get Latest'}
         </button>
+        {isLoading && <div className={styles.spinner}></div>}
       </div>
     </div>
   );

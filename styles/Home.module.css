@@ -66,3 +66,17 @@
     -webkit-background-clip: text; /* For Safari support */
     color: transparent; /* Make the text transparent */
 }
+
+@keyframes spinner {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spinner 0.8s linear infinite;
+  margin: 20px auto;
+}
