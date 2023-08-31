@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: #0e0e10;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.package-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.package-item {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.package-name {
+  flex: 1;
+  text-align: left;
+}
+
+.packageVersion {
+  flex: 1;
+  text-align: right;
+  color: green;
+}
+
+
+.gradientText {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    background: linear-gradient(90.35deg, #BA94D8 3.41%, #D62BBF 10.33%);
+    background-clip: text; /* Apply gradient to the text */
+    -webkit-background-clip: text; /* For Safari support */
+    color: transparent; /* Make the text transparent */
+}
