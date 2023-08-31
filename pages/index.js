@@ -16,18 +16,23 @@ const packageNames = [
 ];
 
 async function getLatestVersions() {
-  const latestVersions = {};
-
-  for (const packageName of packageNames) {
+  const promises = packageNames.map(async (packageName) => {
     try {
       const response = await axios.get(`https://registry.npmjs.org/${packageName}`);
       const latestVersion = response.data['dist-tags'].latest;
-      latestVersions[packageName] = latestVersion;
+      return { packageName, latestVersion };
     } catch (error) {
       console.error(`Error fetching latest version for ${packageName}:`, error.message);
-      latestVersions[packageName] = 'N/A';
+      return { packageName, latestVersion: 'N/A' };
     }
-  }
+  });
+
+  const versionsArray = await Promise.all(promises);
+
+  const latestVersions = {};
+  versionsArray.forEach(({ packageName, latestVersion }) => {
+    latestVersions[packageName] = latestVersion;
+  });
 
   return latestVersions;
 }
