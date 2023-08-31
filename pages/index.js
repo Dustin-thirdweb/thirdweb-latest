@@ -4,9 +4,15 @@ import styles from '../styles/Home.module.css';
 
 const packageNames = [
   '@thirdweb-dev/sdk',
+  '@thirdweb-dev/auth',
+  '@thirdweb-dev/storage',
+  '@thirdweb-dev/wallets',
   '@thirdweb-dev/react',
   '@thirdweb-dev/chains',
-  '@thirdweb-dev/react-native'
+  '@thirdweb-dev/react-core',
+  '@thirdweb-dev/react-native',
+  '@thirdweb-dev/react-native-compat',
+  '@paperxyz/react-client-sdk'
 ];
 
 async function getLatestVersions() {
@@ -46,12 +52,11 @@ const PackageVersionsComponent = () => {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.gradientText}>thirdweb</div>
-        <h2>Latest package versions:</h2>
+        <h2>Latest versions:</h2>
         <ul className={styles.packageList}>
           {packageNames.map(packageName => (
             <li key={packageName} className={styles.packageItem}>
               <span className={styles.packageName}>{packageName}</span>
-              <span className={styles.ellipsis}>...</span>
               <span className={styles.packageVersion}>{latestPackageVersions[packageName]}</span>
             </li>
           ))}
